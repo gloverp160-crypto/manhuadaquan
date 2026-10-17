@@ -1,0 +1,43 @@
+[
+  {
+    "bookSourceComment": "error:connect timed out\n",
+    "bookSourceGroup": "漫画",
+    "bookSourceName": "咪咕动漫",
+    "bookSourceType": 2,
+    "bookSourceUrl": "http://m.migudm.cn",
+    "bookUrlPattern": "",
+    "customOrder": -118191,
+    "enabled": true,
+    "enabledExplore": true,
+    "exploreUrl": "人气::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3\n月票::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=5\n更新::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=1\n完结::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&statusId=7000\n连载::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&statusId=7001\n女生::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&consumerId=180001\n少年::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&consumerId=180002\n男生::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&consumerId=180000\n情感::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15003\n热血::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15017\n搞笑::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=45000\n玄幻::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15021\n都市::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15024\n校园::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15012\n悬疑::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15005\n古风::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15039\n科幻::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15004\n运动::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15002\n萌系::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15025\n恐怖::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15013\n武侠::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15020\n怀旧::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15043\n资讯::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15044\n亲子::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&themeId=15042\n大陆::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5100\n日本::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5102\n韩国::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5104\n港台::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5101\n欧美::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5103\n其他::http://m.migudm.cn/api/listOpus.html?opusType=2&pageNo={{page}}&pageSize=20&orderType=3&areaId=5105",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_4 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/16D57 UCBrowser/12.3.0.1138 Mobile AliApp(TUnionSDK/0.1.20.3)\"\n}",
+    "lastUpdateTime": 1621916079630,
+    "loginUrl": "",
+    "ruleBookInfo": {
+      "intro": "data.opusDetail.opusDesc",
+      "lastChapter": "data.opusDetail.lastItemTitle"
+    },
+    "ruleContent": {
+      "content": "$.data.jpgList.[*]url\n@js:\nlist=result.split(\"\\n\");\nhtml='';\nfor(i in list){\nhtml+='<img src=\"'+list[i]+'\">\\n'\n}\nhtml",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": "authorName",
+      "bookList": "data.comicResult.opusDetailList||data.opusList",
+      "bookUrl": "http://m.migudm.cn/api/opusDetail.html?hwOpusId={$.hwOpusId}&opusType={$.opusType}&order=0",
+      "coverUrl": "opusUrl",
+      "kind": "themeList..themeName",
+      "lastChapter": "lastItemName&&lastItemTitle",
+      "name": "opusName"
+    },
+    "ruleToc": {
+      "chapterList": "$.data.itemList",
+      "chapterName": "isFee&&itemName@js:result.replace(/^0/g,'').replace(/^1/g,'💲')",
+      "chapterUrl": "http://m.migudm.cn/api/webQueryWatchOpusInfo.html?hwOpusId={$.hwOpusId}&index={$.itemIndex}&opusType={$.opusType}"
+    },
+    "searchUrl": "http://m.migudm.cn/api/searchOpus.html?hintKey={{key}}&pageNo={{page}}&pageSize=20&opusType=2&actionSource=02&inputType=01",
+    "weight": [1,4,7]
+  },
+  {
+    "bookSourceComment": "error:Timed out waiting 
